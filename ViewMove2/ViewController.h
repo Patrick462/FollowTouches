@@ -16,6 +16,7 @@
     
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;
+    
 }
 
 -(IBAction)addABox:(id)sender;
