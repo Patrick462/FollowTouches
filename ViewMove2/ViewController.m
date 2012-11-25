@@ -43,6 +43,7 @@
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"ViewController/touchesBegan");
     UITouch *thisTouch = [touches anyObject];
     CGPoint touchPoint = [thisTouch locationInView:self.view];
     for (UIView *view in arrayOfBoxes)
@@ -50,15 +51,25 @@
         if (CGRectContainsPoint(view.frame, touchPoint))
         {
             currentViewBeingTouched = view;
+            NSLog(@"ViewController/touchesBegan CurrenView X:%6.1f Y:%6.1f  TouchPoint X:%6.1f, Y:%6.1f",
+                  currentViewBeingTouched.center.x,
+                  currentViewBeingTouched.center.y,
+                  touchPoint.x,
+                  touchPoint.y);
+            offsetXCurrentPointFromViewCenter = currentViewBeingTouched.center.x - touchPoint.x;
+            offsetYCurrentPointFromViewCenter = currentViewBeingTouched.center.y - touchPoint.y;
         }
     }
     
 }
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    CGPoint centerWithOffset;
     UITouch *thisTouch = [touches anyObject];
     currentPoint = [thisTouch locationInView:self.view];
-    currentViewBeingTouched.center = currentPoint;
+    centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
+                                   currentPoint.y + offsetYCurrentPointFromViewCenter);
+    currentViewBeingTouched.center = centerWithOffset;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
