@@ -17,6 +17,7 @@
 		D2DF762F15BE37730036C256 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DF762D15BE37730036C256 /* ViewController.xib */; };
 		D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */; };
 		D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */; };
+		D2FE24771661AEE9004AC418 /* Linen Yellow 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D2DF762E15BE37730036C256 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 100x100.png"; path = "Assets/Blue Gradient 100x100.png"; sourceTree = "<group>"; };
 		D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 768x1004.png"; path = "Assets/Blue Gradient 768x1004.png"; sourceTree = "<group>"; };
+		D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Yellow 1024x1024.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */,
 				D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */,
+				D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				D2DF762F15BE37730036C256 /* ViewController.xib in Resources */,
 				D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */,
 				D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */,
+				D2FE24771661AEE9004AC418 /* Linen Yellow 1024x1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +296,7 @@
 				D2DF763415BE37730036C256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
