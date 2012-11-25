@@ -62,7 +62,9 @@
     }
 
     [self.view addSubview:newBox];
-    [arrayOfBoxes insertObject:newBox atIndex:0];
+    int arrayCount = [arrayOfBoxes count];
+//    NSLog(@"ViewController/addABox Array Count: %d", arrayCount);
+    [arrayOfBoxes insertObject:newBox atIndex:arrayCount];
     
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
