@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    arrayOfBoxes = [NSMutableArray new];
 }
 
 - (void)viewDidUnload
@@ -29,6 +30,43 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+-(void)addABox:(id)sender
+{
+    UIView *newBox = [UIView new];
+    newBox.frame = CGRectMake(334, 140, 100, 150);
+    newBox.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:newBox];
+    [arrayOfBoxes insertObject:newBox atIndex:0];
+    
+}
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *thisTouch = [touches anyObject];
+    CGPoint touchPoint = [thisTouch locationInView:self.view];
+    for (UIView *view in arrayOfBoxes)
+    {
+        if (CGRectContainsPoint(view.frame, touchPoint))
+        {
+            currentViewBeingTouched = view;
+        }
+    }
+    
+}
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *thisTouch = [touches anyObject];
+    currentPoint = [thisTouch locationInView:self.view];
+    currentViewBeingTouched.center = currentPoint;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *thisTouch = [touches anyObject];
+    currentPoint = [thisTouch locationInView:self.view];
+    currentViewBeingTouched.center = currentPoint;
+    currentViewBeingTouched = nil;
 }
 
 @end

@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    CGPoint currentPoint;
+    NSMutableArray *arrayOfBoxes;
+    UIView *currentViewBeingTouched;
+}
+
+-(IBAction)addABox:(id)sender;
 
 @end

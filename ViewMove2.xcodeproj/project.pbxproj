@@ -15,6 +15,8 @@
 		D2DF762915BE37730036C256 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF762815BE37730036C256 /* AppDelegate.m */; };
 		D2DF762C15BE37730036C256 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF762B15BE37730036C256 /* ViewController.m */; };
 		D2DF762F15BE37730036C256 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DF762D15BE37730036C256 /* ViewController.xib */; };
+		D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */; };
+		D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +24,17 @@
 		D2DF761815BE37730036C256 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2DF761A15BE37730036C256 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2DF761C15BE37730036C256 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D2DF762015BE37730036C256 /* ViewMove2-Info.plist */ = {isa = PBXFileReference; path = "ViewMove2-Info.plist"; sourceTree = "<group>"; };
+		D2DF762015BE37730036C256 /* ViewMove2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViewMove2-Info.plist"; sourceTree = "<group>"; };
 		D2DF762215BE37730036C256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2DF762415BE37730036C256 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2DF762615BE37730036C256 /* ViewMove2-Prefix.pch */ = {isa = PBXFileReference; path = "ViewMove2-Prefix.pch"; sourceTree = "<group>"; };
-		D2DF762715BE37730036C256 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		D2DF762615BE37730036C256 /* ViewMove2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewMove2-Prefix.pch"; sourceTree = "<group>"; };
+		D2DF762715BE37730036C256 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2DF762815BE37730036C256 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2DF762A15BE37730036C256 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		D2DF762A15BE37730036C256 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D2DF762B15BE37730036C256 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2DF762E15BE37730036C256 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 100x100.png"; path = "Assets/Blue Gradient 100x100.png"; sourceTree = "<group>"; };
+		D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 768x1004.png"; path = "Assets/Blue Gradient 768x1004.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				D2DF762A15BE37730036C256 /* ViewController.h */,
 				D2DF762B15BE37730036C256 /* ViewController.m */,
 				D2DF762D15BE37730036C256 /* ViewController.xib */,
+				D2DF763915BE41B70036C256 /* Assets */,
 				D2DF761F15BE37730036C256 /* Supporting Files */,
 			);
 			path = ViewMove2;
@@ -96,6 +101,15 @@
 				D2DF762615BE37730036C256 /* ViewMove2-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2DF763915BE41B70036C256 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */,
+				D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +164,8 @@
 			files = (
 				D2DF762315BE37730036C256 /* InfoPlist.strings in Resources */,
 				D2DF762F15BE37730036C256 /* ViewController.xib in Resources */,
+				D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */,
+				D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
