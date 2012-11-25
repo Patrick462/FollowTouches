@@ -35,8 +35,32 @@
 -(void)addABox:(id)sender
 {
     UIView *newBox = [UIView new];
-    newBox.frame = CGRectMake(334, 140, 100, 150);
-    newBox.backgroundColor = [UIColor blueColor];
+    u_int32_t xRandom = arc4random_uniform(668);
+    u_int32_t yRandom = 120 + arc4random_uniform(734);
+    newBox.frame = CGRectMake(xRandom, yRandom, 100, 150);
+    switch (arc4random_uniform(5))
+    {
+        case 0:
+            newBox.backgroundColor = [UIColor blueColor];
+            break;
+        case 1:
+            newBox.backgroundColor = [UIColor redColor];
+            break;
+        case 2:
+            newBox.backgroundColor = [UIColor brownColor];
+            break;
+        case 3:
+            newBox.backgroundColor = [UIColor grayColor];
+            break;
+        case 4:
+            newBox.backgroundColor = [UIColor greenColor];
+            break;
+            
+        default:
+            newBox.backgroundColor = [UIColor blackColor];
+            break;
+    }
+
     [self.view addSubview:newBox];
     [arrayOfBoxes insertObject:newBox atIndex:0];
     
