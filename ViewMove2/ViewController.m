@@ -44,10 +44,10 @@
     switch (arc4random_uniform(6))
     {
         case 0:
-            newBox.image = [UIImage imageNamed:@"Linen Green 480x480.png"];
+            newBox.image = [UIImage imageNamed:@"Linen Grey diagonal 100x150.png"];
             break;
         case 1:
-            newBox.image = [UIImage imageNamed:@"Linen Grey 480x480.png"];
+            newBox.image = [UIImage imageNamed:@"Linen red diagonal 100x150.png"];
             break;
         case 2:
             newBox.image = [UIImage imageNamed:@"bnr_hat_only.png"];
@@ -56,7 +56,7 @@
             newBox.image = [UIImage imageNamed:@"background.png"];
             break;
         case 4:
-            newBox.image = [UIImage imageNamed:@"background copy.png"];
+            newBox.image = [UIImage imageNamed:@"Linen Green 480x480.png"];
             break;
         case 5:
             newBox.image = [UIImage imageNamed:@"bomb.png"];

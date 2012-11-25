@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D28B5C131662D22000E62C40 /* Linen blue diagonal 768x1004.png in Resources */ = {isa = PBXBuildFile; fileRef = D28B5C121662D22000E62C40 /* Linen blue diagonal 768x1004.png */; };
+		D28B5C171662D23800E62C40 /* Linen Grey diagonal 100x150.png in Resources */ = {isa = PBXBuildFile; fileRef = D28B5C151662D23800E62C40 /* Linen Grey diagonal 100x150.png */; };
+		D28B5C181662D23800E62C40 /* Linen red diagonal 100x150.png in Resources */ = {isa = PBXBuildFile; fileRef = D28B5C161662D23800E62C40 /* Linen red diagonal 100x150.png */; };
 		D2DF761915BE37730036C256 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF761815BE37730036C256 /* UIKit.framework */; };
 		D2DF761B15BE37730036C256 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF761A15BE37730036C256 /* Foundation.framework */; };
 		D2DF761D15BE37730036C256 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF761C15BE37730036C256 /* CoreGraphics.framework */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D28B5C121662D22000E62C40 /* Linen blue diagonal 768x1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen blue diagonal 768x1004.png"; sourceTree = "<group>"; };
+		D28B5C151662D23800E62C40 /* Linen Grey diagonal 100x150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Grey diagonal 100x150.png"; sourceTree = "<group>"; };
+		D28B5C161662D23800E62C40 /* Linen red diagonal 100x150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen red diagonal 100x150.png"; sourceTree = "<group>"; };
 		D2DF761415BE37730036C256 /* ViewMove2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewMove2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DF761815BE37730036C256 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2DF761A15BE37730036C256 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,9 @@
 		D2DF763915BE41B70036C256 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D28B5C121662D22000E62C40 /* Linen blue diagonal 768x1004.png */,
+				D28B5C151662D23800E62C40 /* Linen Grey diagonal 100x150.png */,
+				D28B5C161662D23800E62C40 /* Linen red diagonal 100x150.png */,
 				D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */,
 				D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */,
 				D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */,
@@ -198,6 +207,9 @@
 				D2FE24971661CC7F004AC418 /* background copy.png in Resources */,
 				D2FE249A1661CD2D004AC418 /* bnr_hat_only.png in Resources */,
 				D2FE249B1661CD2D004AC418 /* bomb.png in Resources */,
+				D28B5C131662D22000E62C40 /* Linen blue diagonal 768x1004.png in Resources */,
+				D28B5C171662D23800E62C40 /* Linen Grey diagonal 100x150.png in Resources */,
+				D28B5C181662D23800E62C40 /* Linen red diagonal 100x150.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

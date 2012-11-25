@@ -47,7 +47,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Linen Yellow 1024x1024.png</string>
+							<string key="NSResourceName">Linen blue diagonal 768x1004.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="302947135">
@@ -188,7 +188,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="Blue Gradient 100x100.png">{100, 100}</string>
-			<string key="Linen Yellow 1024x1024.png">{1024, 1024}</string>
+			<string key="Linen blue diagonal 768x1004.png">{768, 1004}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
