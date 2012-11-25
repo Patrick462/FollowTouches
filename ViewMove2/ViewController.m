@@ -34,26 +34,36 @@
 
 -(void)addABox:(id)sender
 {
-    UIView *newBox = [UIView new];
+    UIImageView *newBox = [UIImageView new];
+//    UIImageView *happy = [UIImageView new];
     u_int32_t xRandom = arc4random_uniform(668);
     u_int32_t yRandom = 120 + arc4random_uniform(734);
     newBox.frame = CGRectMake(xRandom, yRandom, 100, 150);
-    switch (arc4random_uniform(5))
+    switch (arc4random_uniform(6))
     {
         case 0:
             newBox.backgroundColor = [UIColor blueColor];
+            newBox.image = [UIImage imageNamed:@"Linen Green 480x480.png"];
             break;
         case 1:
             newBox.backgroundColor = [UIColor redColor];
+            newBox.image = [UIImage imageNamed:@"Linen Grey 480x480.png"];
             break;
         case 2:
             newBox.backgroundColor = [UIColor brownColor];
+            newBox.image = [UIImage imageNamed:@"bnr_hat_only.png"];
             break;
         case 3:
             newBox.backgroundColor = [UIColor grayColor];
+            newBox.image = [UIImage imageNamed:@"background.png"];
             break;
         case 4:
             newBox.backgroundColor = [UIColor greenColor];
+            newBox.image = [UIImage imageNamed:@"background copy.png"];
+            break;
+        case 5:
+            newBox.backgroundColor = [UIColor greenColor];
+            newBox.image = [UIImage imageNamed:@"bomb.png"];
             break;
             
         default:

@@ -18,6 +18,13 @@
 		D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */; };
 		D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */; };
 		D2FE24771661AEE9004AC418 /* Linen Yellow 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */; };
+		D2FE248E1661CB56004AC418 /* Linen Green 480x480.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE248D1661CB56004AC418 /* Linen Green 480x480.png */; };
+		D2FE24911661CB5E004AC418 /* Linen Grey 480x480.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24901661CB5E004AC418 /* Linen Grey 480x480.png */; };
+		D2FE24931661CB6B004AC418 /* Linen Yellow 480x480.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24921661CB6B004AC418 /* Linen Yellow 480x480.png */; };
+		D2FE24951661CBEC004AC418 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24941661CBEC004AC418 /* background.png */; };
+		D2FE24971661CC7F004AC418 /* background copy.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24961661CC7F004AC418 /* background copy.png */; };
+		D2FE249A1661CD2D004AC418 /* bnr_hat_only.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24981661CD2D004AC418 /* bnr_hat_only.png */; };
+		D2FE249B1661CD2D004AC418 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FE24991661CD2D004AC418 /* bomb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 100x100.png"; path = "Assets/Blue Gradient 100x100.png"; sourceTree = "<group>"; };
 		D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Gradient 768x1004.png"; path = "Assets/Blue Gradient 768x1004.png"; sourceTree = "<group>"; };
 		D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Yellow 1024x1024.png"; sourceTree = "<group>"; };
+		D2FE248D1661CB56004AC418 /* Linen Green 480x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Green 480x480.png"; sourceTree = "<group>"; };
+		D2FE24901661CB5E004AC418 /* Linen Grey 480x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Grey 480x480.png"; sourceTree = "<group>"; };
+		D2FE24921661CB6B004AC418 /* Linen Yellow 480x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen Yellow 480x480.png"; sourceTree = "<group>"; };
+		D2FE24941661CBEC004AC418 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D2FE24961661CC7F004AC418 /* background copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background copy.png"; sourceTree = "<group>"; };
+		D2FE24981661CD2D004AC418 /* bnr_hat_only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bnr_hat_only.png; sourceTree = "<group>"; };
+		D2FE24991661CD2D004AC418 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,13 @@
 				D2DF763A15BE42610036C256 /* Blue Gradient 100x100.png */,
 				D2DF763B15BE42610036C256 /* Blue Gradient 768x1004.png */,
 				D2FE24761661AEE9004AC418 /* Linen Yellow 1024x1024.png */,
+				D2FE248D1661CB56004AC418 /* Linen Green 480x480.png */,
+				D2FE24901661CB5E004AC418 /* Linen Grey 480x480.png */,
+				D2FE24921661CB6B004AC418 /* Linen Yellow 480x480.png */,
+				D2FE24941661CBEC004AC418 /* background.png */,
+				D2FE24961661CC7F004AC418 /* background copy.png */,
+				D2FE24981661CD2D004AC418 /* bnr_hat_only.png */,
+				D2FE24991661CD2D004AC418 /* bomb.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -170,6 +191,13 @@
 				D2DF763C15BE42610036C256 /* Blue Gradient 100x100.png in Resources */,
 				D2DF763D15BE42610036C256 /* Blue Gradient 768x1004.png in Resources */,
 				D2FE24771661AEE9004AC418 /* Linen Yellow 1024x1024.png in Resources */,
+				D2FE248E1661CB56004AC418 /* Linen Green 480x480.png in Resources */,
+				D2FE24911661CB5E004AC418 /* Linen Grey 480x480.png in Resources */,
+				D2FE24931661CB6B004AC418 /* Linen Yellow 480x480.png in Resources */,
+				D2FE24951661CBEC004AC418 /* background.png in Resources */,
+				D2FE24971661CC7F004AC418 /* background copy.png in Resources */,
+				D2FE249A1661CD2D004AC418 /* bnr_hat_only.png in Resources */,
+				D2FE249B1661CD2D004AC418 /* bomb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
