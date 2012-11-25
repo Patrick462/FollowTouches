@@ -112,6 +112,32 @@
     centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
                                    currentPoint.y + offsetYCurrentPointFromViewCenter);
     currentViewBeingTouched.center = centerWithOffset;
+    
+    // brief pulse animation to let user know they have dropped the view
+    [UIImageView beginAnimations:nil context:nil];
+    [UIImageView setAnimationDelegate:self];
+    [UIImageView setAnimationDuration:0.25];
+    [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    currentViewBeingTouched.frame = CGRectMake(currentViewBeingTouched.frame.origin.x,
+                                               currentViewBeingTouched.frame.origin.y,
+                                               1.1 * currentViewBeingTouched.frame.size.width,
+                                               1.1 * currentViewBeingTouched.frame.size.height);
+    
+    [UIImageView commitAnimations];
+    
+    [UIImageView beginAnimations:nil context:nil];
+    [UIImageView setAnimationDelegate:self];
+    [UIImageView setAnimationDuration:0.25];
+    [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    currentViewBeingTouched.frame = CGRectMake(currentViewBeingTouched.frame.origin.x,
+                                               currentViewBeingTouched.frame.origin.y,
+                                               currentViewBeingTouched.frame.size.width / 1.1,
+                                               currentViewBeingTouched.frame.size.height / 1.1);
+    
+    [UIImageView commitAnimations];
+
     currentViewBeingTouched = nil;
 }
 
