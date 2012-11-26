@@ -50,7 +50,7 @@
             newBox.image = [UIImage imageNamed:@"Linen red diagonal 100x150.png"];
             break;
         case 2:
-            newBox.image = [UIImage imageNamed:@"bnr_hat_only.png"];
+            newBox.image = [UIImage imageNamed:@"Linen brown shine 100x150.png"];
             break;
         case 3:
             newBox.image = [UIImage imageNamed:@"background.png"];
