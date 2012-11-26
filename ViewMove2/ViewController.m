@@ -108,6 +108,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // problem with a quick tap on a view - the view enlarges but doesn't shrink!
     CGPoint centerWithOffset;
     UITouch *thisTouch = [touches anyObject];
     currentPoint = [thisTouch locationInView:self.view];
