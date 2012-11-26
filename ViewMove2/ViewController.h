@@ -13,6 +13,11 @@
     CGPoint currentPoint;
     float offsetXCurrentPointFromViewCenter;
     float offsetYCurrentPointFromViewCenter;
+    float originX;
+    float originY;
+    float sizeWidth;
+    float sizeHeight;
+    
     
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;
