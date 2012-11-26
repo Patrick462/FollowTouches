@@ -68,14 +68,11 @@
     }
 
     [self.view addSubview:newBox];
-    int arrayCount = [arrayOfBoxes count];
-//    NSLog(@"ViewController/addABox Array Count: %d", arrayCount);
-    [arrayOfBoxes insertObject:newBox atIndex:arrayCount];
-    
+    [arrayOfBoxes addObject:newBox];    
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"ViewController/touchesBegan");
+//    NSLog(@"ViewController/touchesBegan");
     UITouch *thisTouch = [touches anyObject];
     CGPoint touchPoint = [thisTouch locationInView:self.view];
     for (UIView *view in arrayOfBoxes)
@@ -112,7 +109,6 @@
     centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
                                    currentPoint.y + offsetYCurrentPointFromViewCenter);
     currentViewBeingTouched.center = centerWithOffset;
-
     
      originX    = currentViewBeingTouched.frame.origin.x;
      originY    = currentViewBeingTouched.frame.origin.y;
@@ -125,13 +121,12 @@
     // create the score, which then floats away and disappears
     // setAnimationDidStopSelector
 
-
 }
 
 -(void)pulseBigger
 {
-    NSLog(@"ViewController/pulseBigger  x:%5f, y:%5f, w:%5f, h:%5f",
-          originX, originY, sizeWidth, sizeHeight);
+//    NSLog(@"ViewController/pulseBigger  x:%5f, y:%5f, w:%5f, h:%5f",
+//          originX, originY, sizeWidth, sizeHeight);
     // 1. Make it bigger, expand from center
     [UIImageView beginAnimations:nil context:nil];
     [UIImageView setAnimationDelegate:self];
@@ -145,18 +140,18 @@
                                                1.1 * sizeHeight);
     
     [UIImageView commitAnimations];
-  
-}
+  }
 
 -(void)pulseSmaller
 {
-    NSLog(@"ViewController/pulseSmaller x:%5f, y:%5f, w:%5f, h:%5f",
-          originX, originY, sizeWidth, sizeHeight);
+//    NSLog(@"ViewController/pulseSmaller x:%5f, y:%5f, w:%5f, h:%5f",
+//          originX, originY, sizeWidth, sizeHeight);
     // 2. return to original size and position
     [UIImageView beginAnimations:nil context:nil];
     [UIImageView setAnimationDelegate:self];
     [UIImageView setAnimationDuration:0.25];
     [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIImageView setAnimationDidStopSelector:@selector(dropCurrentView)];
     
     currentViewBeingTouched.frame = CGRectMake(originX,
                                                originY,
@@ -164,6 +159,11 @@
                                                sizeHeight);
     
     [UIImageView commitAnimations];
+  
+}
+
+-(void)dropCurrentView
+{
     currentViewBeingTouched = nil;   
 }
 

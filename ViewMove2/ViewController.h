@@ -18,10 +18,8 @@
     float sizeWidth;
     float sizeHeight;
     
-    
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;
-    
 }
 
 -(IBAction)addABox:(id)sender;
