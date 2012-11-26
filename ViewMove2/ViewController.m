@@ -35,10 +35,10 @@
 -(void)addABox:(id)sender
 {
     UIImageView *newBox = [UIImageView new];
-    u_int32_t xRandom = arc4random_uniform(668);
-    u_int32_t yRandom = 120 + arc4random_uniform(734);
-    u_int32_t widthRandom = arc4random_uniform(20);
-    u_int32_t heightRandom = arc4random_uniform(30);
+    u_int32_t xRandom       = arc4random_uniform(668);
+    u_int32_t yRandom       = arc4random_uniform(734) + 120;
+    u_int32_t widthRandom   = arc4random_uniform(20);
+    u_int32_t heightRandom  = arc4random_uniform(30);
     newBox.frame = CGRectMake(xRandom, yRandom, 90 + widthRandom, 135 + heightRandom);
     
     switch (arc4random_uniform(6))
@@ -75,21 +75,26 @@
 //    NSLog(@"ViewController/touchesBegan");
     UITouch *thisTouch = [touches anyObject];
     CGPoint touchPoint = [thisTouch locationInView:self.view];
+    BOOL didTouchAView = NO;
     for (UIView *view in arrayOfBoxes)
     {
         if (CGRectContainsPoint(view.frame, touchPoint))
         {
+            NSLog(@"ViewController/touchesBegan view contains point");
             currentViewBeingTouched = view;
-//            NSLog(@"ViewController/touchesBegan CurrenView X:%6.1f Y:%6.1f  TouchPoint X:%6.1f, Y:%6.1f",
-//                  currentViewBeingTouched.center.x,
-//                  currentViewBeingTouched.center.y,
-//                  touchPoint.x,
-//                  touchPoint.y);
+            
+            originX    = currentViewBeingTouched.frame.origin.x;
+            originY    = currentViewBeingTouched.frame.origin.y;
+            sizeWidth  = currentViewBeingTouched.frame.size.width;
+            sizeHeight = currentViewBeingTouched.frame.size.height;
+            shouldCallDropCurrentView = NO;
+            didTouchAView = YES;
+
             offsetXCurrentPointFromViewCenter = currentViewBeingTouched.center.x - touchPoint.x;
             offsetYCurrentPointFromViewCenter = currentViewBeingTouched.center.y - touchPoint.y;
         }
     }
-    
+    if (didTouchAView) {[self pulseBigger];}
 }
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -110,10 +115,12 @@
                                    currentPoint.y + offsetYCurrentPointFromViewCenter);
     currentViewBeingTouched.center = centerWithOffset;
     
-     originX    = currentViewBeingTouched.frame.origin.x;
-     originY    = currentViewBeingTouched.frame.origin.y;
-     sizeWidth  = currentViewBeingTouched.frame.size.width;
-     sizeHeight = currentViewBeingTouched.frame.size.height;
+    originX    = currentViewBeingTouched.frame.origin.x;
+    originY    = currentViewBeingTouched.frame.origin.y;
+    sizeWidth  = currentViewBeingTouched.frame.size.width;
+    sizeHeight = currentViewBeingTouched.frame.size.height;
+    
+    shouldCallDropCurrentView = YES;
 
     // brief pulse animation to let user know they have dropped the view
     [self pulseBigger];
@@ -130,7 +137,7 @@
     // 1. Make it bigger, expand from center
     [UIImageView beginAnimations:nil context:nil];
     [UIImageView setAnimationDelegate:self];
-    [UIImageView setAnimationDuration:0.25];
+    [UIImageView setAnimationDuration:0.20];
     [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIImageView setAnimationDidStopSelector:@selector(pulseSmaller)];
     
@@ -149,9 +156,12 @@
     // 2. return to original size and position
     [UIImageView beginAnimations:nil context:nil];
     [UIImageView setAnimationDelegate:self];
-    [UIImageView setAnimationDuration:0.25];
+    [UIImageView setAnimationDuration:0.20];
     [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIImageView setAnimationDidStopSelector:@selector(dropCurrentView)];
+    if (shouldCallDropCurrentView)
+    {
+        [UIImageView setAnimationDidStopSelector:@selector(dropCurrentView)];
+    }
     
     currentViewBeingTouched.frame = CGRectMake(originX,
                                                originY,
