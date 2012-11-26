@@ -29,6 +29,9 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    // we don't handle rotation, so probably should set this to NO
+    // The background of the main view doesn't handle landscape
+    // The creation of new boxes doesn't handle landscape
     return YES;
 }
 
