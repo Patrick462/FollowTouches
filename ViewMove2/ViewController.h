@@ -11,12 +11,16 @@
 @interface ViewController : UIViewController
 {
     CGPoint currentPoint;
-    float offsetXCurrentPointFromViewCenter;
-    float offsetYCurrentPointFromViewCenter;
+    float   offsetXCurrentPointFromViewCenter;
+    float   offsetYCurrentPointFromViewCenter;
+    float   originX;
+    float   originY;
+    float   sizeWidth;
+    float   sizeHeight;
+    BOOL    shouldCallDropCurrentView;
     
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;
-    
 }
 
 -(IBAction)addABox:(id)sender;
