@@ -18,6 +18,9 @@
     float   sizeWidth;
     float   sizeHeight;
     BOOL    shouldCallDropCurrentView;
+    BOOL    hasPulseBiggerFinished;
+    BOOL    didTouchAView;
+
     
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;

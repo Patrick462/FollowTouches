@@ -19,6 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     arrayOfBoxes = [NSMutableArray new];
+    hasPulseBiggerFinished = YES;
 }
 
 - (void)viewDidUnload
@@ -76,9 +77,9 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 //    NSLog(@"ViewController/touchesBegan");
+    didTouchAView = NO;
     UITouch *thisTouch = [touches anyObject];
     CGPoint touchPoint = [thisTouch locationInView:self.view];
-    BOOL didTouchAView = NO;
     for (UIView *view in arrayOfBoxes)
     {
         if (CGRectContainsPoint(view.frame, touchPoint))
@@ -101,37 +102,40 @@
 }
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint centerWithOffset;
-    UITouch *thisTouch = [touches anyObject];
-    currentPoint = [thisTouch locationInView:self.view];
-    centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
-                                   currentPoint.y + offsetYCurrentPointFromViewCenter);
-    currentViewBeingTouched.center = centerWithOffset;
+    if (didTouchAView)
+    {        
+        CGPoint centerWithOffset;
+        UITouch *thisTouch = [touches anyObject];
+        currentPoint = [thisTouch locationInView:self.view];
+        centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
+                                       currentPoint.y + offsetYCurrentPointFromViewCenter);
+        currentViewBeingTouched.center = centerWithOffset;
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // problem with a quick tap on a view - the view enlarges but doesn't shrink!
-    CGPoint centerWithOffset;
-    UITouch *thisTouch = [touches anyObject];
-    currentPoint = [thisTouch locationInView:self.view];
-    centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
-                                   currentPoint.y + offsetYCurrentPointFromViewCenter);
-    currentViewBeingTouched.center = centerWithOffset;
+    if (didTouchAView)
+    {
+        CGPoint centerWithOffset;
+        UITouch *thisTouch = [touches anyObject];
+        currentPoint = [thisTouch locationInView:self.view];
+        centerWithOffset = CGPointMake(currentPoint.x + offsetXCurrentPointFromViewCenter,
+                                       currentPoint.y + offsetYCurrentPointFromViewCenter);
+        currentViewBeingTouched.center = centerWithOffset;
     
-    originX    = currentViewBeingTouched.frame.origin.x;
-    originY    = currentViewBeingTouched.frame.origin.y;
-    sizeWidth  = currentViewBeingTouched.frame.size.width;
-    sizeHeight = currentViewBeingTouched.frame.size.height;
+        originX    = currentViewBeingTouched.frame.origin.x;
+        originY    = currentViewBeingTouched.frame.origin.y;
     
-    shouldCallDropCurrentView = YES;
+        shouldCallDropCurrentView = YES;
 
-    // brief pulse animation to let user know they have dropped the view
-    [self pulseBigger];
+        // brief pulse animation to let user know they have dropped the view
+        [self pulseBigger];
     
-    // create the score, which then floats away and disappears
-    // setAnimationDidStopSelector
+        // create the score, which then floats away and disappears
+        // setAnimationDidStopSelector
 
+    }
 }
 
 -(void)pulseBigger
@@ -139,25 +143,30 @@
 //    NSLog(@"ViewController/pulseBigger  x:%5f, y:%5f, w:%5f, h:%5f",
 //          originX, originY, sizeWidth, sizeHeight);
     // 1. Make it bigger, expand from center
-    [UIImageView beginAnimations:nil context:nil];
-    [UIImageView setAnimationDelegate:self];
-    [UIImageView setAnimationDuration:0.20];
-    [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIImageView setAnimationDidStopSelector:@selector(pulseSmaller)];
+    NSLog(@"ViewController/pulseBigger Finished?:%d", hasPulseBiggerFinished);
+    if (hasPulseBiggerFinished)
+    {
+        hasPulseBiggerFinished = NO;
+        [UIImageView beginAnimations:nil context:nil];
+        [UIImageView setAnimationDelegate:self];
+        [UIImageView setAnimationDuration:0.20];
+        [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIImageView setAnimationDidStopSelector:@selector(pulseSmaller)];
     
-    currentViewBeingTouched.frame = CGRectMake(originX - 0.5 * (0.1 * sizeWidth),
-                                               originY - 0.5 * (0.1 * sizeHeight),
-                                               1.1 * sizeWidth,
-                                               1.1 * sizeHeight);
-    
-    [UIImageView commitAnimations];
-  }
+        currentViewBeingTouched.frame = CGRectMake(originX - 0.5 * (0.1 * sizeWidth),
+                                                   originY - 0.5 * (0.1 * sizeHeight),
+                                                   1.1 * sizeWidth,
+                                                   1.1 * sizeHeight);
+        [UIImageView commitAnimations];
+    }
+}
 
 -(void)pulseSmaller
 {
 //    NSLog(@"ViewController/pulseSmaller x:%5f, y:%5f, w:%5f, h:%5f",
 //          originX, originY, sizeWidth, sizeHeight);
     // 2. return to original size and position
+    hasPulseBiggerFinished = YES;
     [UIImageView beginAnimations:nil context:nil];
     [UIImageView setAnimationDelegate:self];
     [UIImageView setAnimationDuration:0.20];
