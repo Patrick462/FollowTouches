@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"VC/viewDidLoad");
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     arrayOfBoxes = [NSMutableArray new];
@@ -24,12 +25,14 @@
 
 - (void)viewDidUnload
 {
+    NSLog(@"VC/viewDidUnload");
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    NSLog(@"VC/shouldAutorotateToInterfaceOrientation");
     // we don't handle rotation, so probably should set this to NO
     // The background of the main view doesn't handle landscape
     // The creation of new boxes doesn't handle landscape
@@ -38,6 +41,7 @@
 
 -(void)addABox:(id)sender
 {
+    NSLog(@"VC/addABox");
     UIImageView *newBox = [UIImageView new];
     u_int32_t xRandom       = arc4random_uniform(668);
     u_int32_t yRandom       = arc4random_uniform(734) + 120;
@@ -76,7 +80,7 @@
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    NSLog(@"ViewController/touchesBegan");
+    NSLog(@"VC/touchesBegan");
     didTouchAView = NO;
     UITouch *thisTouch = [touches anyObject];
     CGPoint touchPoint = [thisTouch locationInView:self.view];
@@ -84,7 +88,7 @@
     {
         if (CGRectContainsPoint(view.frame, touchPoint))
         {
-            NSLog(@"ViewController/touchesBegan view contains point");
+            NSLog(@"VC/touchesBegan view contains point");
             currentViewBeingTouched = view;
             
             originX    = currentViewBeingTouched.frame.origin.x;
@@ -102,6 +106,7 @@
 }
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+//    NSLog(@"VC/touchesMoved");
     if (didTouchAView)
     {        
         CGPoint centerWithOffset;
@@ -115,6 +120,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"VC/touchesEnded");
     if (didTouchAView)
     {
         CGPoint centerWithOffset;
@@ -124,8 +130,11 @@
                                        currentPoint.y + offsetYCurrentPointFromViewCenter);
         currentViewBeingTouched.center = centerWithOffset;
     
-        originX    = currentViewBeingTouched.frame.origin.x;
-        originY    = currentViewBeingTouched.frame.origin.y;
+        if (hasPulseBiggerFinished)
+        {
+            originX    = currentViewBeingTouched.frame.origin.x;
+            originY    = currentViewBeingTouched.frame.origin.y;
+        }
     
         shouldCallDropCurrentView = YES;
 
@@ -140,10 +149,10 @@
 
 -(void)pulseBigger
 {
-//    NSLog(@"ViewController/pulseBigger  x:%5f, y:%5f, w:%5f, h:%5f",
-//          originX, originY, sizeWidth, sizeHeight);
+//    NSLog(@"VC/pulseBigger Finished?:%d", hasPulseBiggerFinished);
+    NSLog(@"VC/pulseBigger  x:%5.0f, y:%5.0f, w:%5.0f, h:%5.0f, Finished:%2d",
+          originX, originY, sizeWidth, sizeHeight, hasPulseBiggerFinished);
     // 1. Make it bigger, expand from center
-    NSLog(@"ViewController/pulseBigger Finished?:%d", hasPulseBiggerFinished);
     if (hasPulseBiggerFinished)
     {
         hasPulseBiggerFinished = NO;
@@ -163,8 +172,8 @@
 
 -(void)pulseSmaller
 {
-//    NSLog(@"ViewController/pulseSmaller x:%5f, y:%5f, w:%5f, h:%5f",
-//          originX, originY, sizeWidth, sizeHeight);
+    NSLog(@"VC/pulseSmaller x:%5.0f, y:%5.0f, w:%5.0f, h:%5.0f, pB Finished?:%2d",
+          originX, originY, sizeWidth, sizeHeight, hasPulseBiggerFinished);
     // 2. return to original size and position
     hasPulseBiggerFinished = YES;
     [UIImageView beginAnimations:nil context:nil];
@@ -187,7 +196,8 @@
 
 -(void)dropCurrentView
 {
-    currentViewBeingTouched = nil;   
+    NSLog(@"VC/dropCurrentView");
+    currentViewBeingTouched = nil;
 }
 
 @end
