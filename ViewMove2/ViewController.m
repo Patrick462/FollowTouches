@@ -78,6 +78,7 @@
     [self.view addSubview:newBox];
     [arrayOfBoxes addObject:newBox];    
 }
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"VC/touchesBegan");
@@ -91,10 +92,13 @@
             NSLog(@"VC/touchesBegan view contains point");
             currentViewBeingTouched = view;
             
-            originX    = currentViewBeingTouched.frame.origin.x;
-            originY    = currentViewBeingTouched.frame.origin.y;
-            sizeWidth  = currentViewBeingTouched.frame.size.width;
-            sizeHeight = currentViewBeingTouched.frame.size.height;
+            if (hasPulseBiggerFinished)
+            {
+                originX    = currentViewBeingTouched.frame.origin.x;
+                originY    = currentViewBeingTouched.frame.origin.y;
+                sizeWidth  = currentViewBeingTouched.frame.size.width;
+                sizeHeight = currentViewBeingTouched.frame.size.height;                
+            }
             shouldCallDropCurrentView = NO;
             didTouchAView = YES;
 
@@ -104,6 +108,7 @@
     }
     if (didTouchAView) {[self pulseBigger];}
 }
+
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 //    NSLog(@"VC/touchesMoved");
@@ -189,9 +194,7 @@
                                                originY,
                                                sizeWidth,
                                                sizeHeight);
-    
     [UIImageView commitAnimations];
-  
 }
 
 -(void)dropCurrentView

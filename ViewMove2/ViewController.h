@@ -20,7 +20,6 @@
     BOOL    shouldCallDropCurrentView;
     BOOL    hasPulseBiggerFinished;
     BOOL    didTouchAView;
-
     
     NSMutableArray *arrayOfBoxes;
     UIView *currentViewBeingTouched;
